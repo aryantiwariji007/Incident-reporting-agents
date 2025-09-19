@@ -1,0 +1,7 @@
+crewai
+crewai-tools
+groq
+python-dotenv
+pydantic
+langchain_google-genai
+tavily-python

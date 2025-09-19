@@ -1,0 +1,17 @@
+
+max_age_days: 180
+
+# Preferred news sources
+allowed_sources:
+  - reuters.com
+  - bbc.com
+  - cnn.com
+  - apnews.com
+  - timesofindia.indiatimes.com
+  - globaltimes.com
+
+# Search backend
+search_tool: tavily
+
+# Maximum incidents to fetch
+max_incidents: 3

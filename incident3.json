@@ -1,0 +1,77 @@
+{
+    "raw": "```json\n{\n  \"reports\": [\n    {\n      \"title\": \"State Farm AI Claims Processing Allegedly Discriminates Against Black Homeowners\",\n      \"summary\": \"A class action lawsuit alleges that State Farm's AI-powered claims-processing methods discriminate against Black homeowners, leading to longer wait times and greater scrutiny.\",\n      \"impact\": \"Longer wait times, greater scrutiny, and making it harder for Black customers to get payouts.\",\n      \"estimated_loss\": \"unknown\",\n      \"fine_due_to_non_compliance\": \"unknown\",\n      \"sources\": [\n        \"https://www.classaction.org/news/state-farm-discriminates-against-black-homeowners-when-processing-insurance-claims-class-action-alleges\",\n        \"https://www.insurancejournal.com/news/national/2022/12/16/699788.htm\",\n        \"https://www.courthousenews.com/state-farm-accused-of-making-it-harder-for-black-customers-to-get-payouts/\"\n      ]\n    }\n  ]\n}\n```",
+    "pydantic": null,
+    "json_dict": {
+        "reports": [
+            {
+                "title": "State Farm AI Claims Processing Allegedly Discriminates Against Black Homeowners",
+                "summary": "A class action lawsuit alleges that State Farm's AI-powered claims-processing methods discriminate against Black homeowners, leading to longer wait times and greater scrutiny.",
+                "impact": "Longer wait times, greater scrutiny, and making it harder for Black customers to get payouts.",
+                "estimated_loss": "unknown",
+                "fine_due_to_non_compliance": "unknown",
+                "sources": [
+                    "https://www.classaction.org/news/state-farm-discriminates-against-black-homeowners-when-processing-insurance-claims-class-action-alleges",
+                    "https://www.insurancejournal.com/news/national/2022/12/16/699788.htm",
+                    "https://www.courthousenews.com/state-farm-accused-of-making-it-harder-for-black-customers-to-get-payouts/"
+                ]
+            }
+        ]
+    },
+    "tasks_output": [
+        {
+            "description": "\n        Find up to 3 **real-world incidents** of AI failures or unethical use.\n\n        Requirements:\n        - Must be within the last 180 days.\n        - Must describe an AI system that already caused harm (fraud, scams, bias, accidents, etc.).\n        - Exclude studies, surveys, research reports, advisories, proposals, concerns,\n          and blogs/personal websites (Medium, WordPress, Blogspot, etc.).\n        - Always provide the full clickable URL, not just the domain.\n\n        For each incident return: summary, date, and full URL.\n    ",
+            "name": "\n        Find up to 3 **real-world incidents** of AI failures or unethical use.\n\n        Requirements:\n        - Must be within the last 180 days.\n        - Must describe an AI system that already caused harm (fraud, scams, bias, accidents, etc.).\n        - Exclude studies, surveys, research reports, advisories, proposals, concerns,\n          and blogs/personal websites (Medium, WordPress, Blogspot, etc.).\n        - Always provide the full clickable URL, not just the domain.\n\n        For each incident return: summary, date, and full URL.\n    ",
+            "expected_output": "Structured list (summary, date, URL) of up to three real-world AI incidents causing harm.",
+            "summary": "\n        Find up...",
+            "raw": "```\n- Summary: A class action lawsuit alleges that State Farm's AI-powered claims-processing methods discriminate against Black homeowners, leading to longer wait times and greater scrutiny.\n- Date: December 20, 2022 (date of initial news reports)\n- URL: https://www.classaction.org/news/state-farm-discriminates-against-black-homeowners-when-processing-insurance-claims-class-action-alleges\n```",
+            "pydantic": null,
+            "json_dict": null,
+            "agent": "AI Ethics & Incident Scout",
+            "output_format": "raw"
+        },
+        {
+            "description": "\n        Validate and enrich each incident:\n        1. Confirm it's a real harmful event (no research, warning, or blog).\n        2. Collect at least two credible, working URLs with evidence.\n        3. Extract impact, estimated_loss ('unknown'), fines ('unknown').\n        4. Return `sources` as a list of those URLs.\n    ",
+            "name": "\n        Validate and enrich each incident:\n        1. Confirm it's a real harmful event (no research, warning, or blog).\n        2. Collect at least two credible, working URLs with evidence.\n        3. Extract impact, estimated_loss ('unknown'), fines ('unknown').\n        4. Return `sources` as a list of those URLs.\n    ",
+            "expected_output": "Validated briefs with ≥2 evidence links, impact, estimated_loss, fines.",
+            "summary": "\n        Validate and...",
+            "raw": "```json\n{\n  \"summary\": \"A class action lawsuit alleges that State Farm's AI-powered claims-processing methods discriminate against Black homeowners, leading to longer wait times and greater scrutiny.\",\n  \"date\": \"December 20, 2022 (date of initial news reports)\",\n  \"URL\": \"https://www.classaction.org/news/state-farm-discriminates-against-black-homeowners-when-processing-insurance-claims-class-action-alleges\",\n  \"impact\": \"Longer wait times, greater scrutiny, and making it harder for Black customers to get payouts.\",\n  \"estimated_loss\": \"unknown\",\n  \"fines\": \"unknown\",\n  \"sources\": [\n    \"https://www.classaction.org/news/state-farm-discriminates-against-black-homeowners-when-processing-insurance-claims-class-action-alleges\",\n    \"https://www.insurancejournal.com/news/national/2022/12/16/699788.htm\",\n    \"https://www.courthousenews.com/state-farm-accused-of-making-it-harder-for-black-customers-to-get-payouts/\"\n  ]\n}\n```",
+            "pydantic": null,
+            "json_dict": null,
+            "agent": "AI Incident Analyst",
+            "output_format": "raw"
+        },
+        {
+            "description": "\n        Build a strict JSON report.\n\n        - Only include incidents with ≥2 working clickable URLs.\n        - Remove duplicates by URL set or title.\n    ",
+            "name": "\n        Build a strict JSON report.\n\n        - Only include incidents with ≥2 working clickable URLs.\n        - Remove duplicates by URL set or title.\n    ",
+            "expected_output": "JSON (ReportListSchema) with up to 3 reports.",
+            "summary": "\n        Build a...",
+            "raw": "```json\n{\n  \"reports\": [\n    {\n      \"title\": \"State Farm AI Claims Processing Allegedly Discriminates Against Black Homeowners\",\n      \"summary\": \"A class action lawsuit alleges that State Farm's AI-powered claims-processing methods discriminate against Black homeowners, leading to longer wait times and greater scrutiny.\",\n      \"impact\": \"Longer wait times, greater scrutiny, and making it harder for Black customers to get payouts.\",\n      \"estimated_loss\": \"unknown\",\n      \"fine_due_to_non_compliance\": \"unknown\",\n      \"sources\": [\n        \"https://www.classaction.org/news/state-farm-discriminates-against-black-homeowners-when-processing-insurance-claims-class-action-alleges\",\n        \"https://www.insurancejournal.com/news/national/2022/12/16/699788.htm\",\n        \"https://www.courthousenews.com/state-farm-accused-of-making-it-harder-for-black-customers-to-get-payouts/\"\n      ]\n    }\n  ]\n}\n```",
+            "pydantic": null,
+            "json_dict": {
+                "reports": [
+                    {
+                        "title": "State Farm AI Claims Processing Allegedly Discriminates Against Black Homeowners",
+                        "summary": "A class action lawsuit alleges that State Farm's AI-powered claims-processing methods discriminate against Black homeowners, leading to longer wait times and greater scrutiny.",
+                        "impact": "Longer wait times, greater scrutiny, and making it harder for Black customers to get payouts.",
+                        "estimated_loss": "unknown",
+                        "fine_due_to_non_compliance": "unknown",
+                        "sources": [
+                            "https://www.classaction.org/news/state-farm-discriminates-against-black-homeowners-when-processing-insurance-claims-class-action-alleges",
+                            "https://www.insurancejournal.com/news/national/2022/12/16/699788.htm",
+                            "https://www.courthousenews.com/state-farm-accused-of-making-it-harder-for-black-customers-to-get-payouts/"
+                        ]
+                    }
+                ]
+            },
+            "agent": "AI Incident Reporter",
+            "output_format": "json"
+        }
+    ],
+    "token_usage": {
+        "total_tokens": 0,
+        "prompt_tokens": 0,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 0,
+        "successful_requests": 0
+    }
+}
