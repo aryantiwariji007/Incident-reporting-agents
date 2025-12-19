@@ -10,8 +10,12 @@ allowed_sources:
   - timesofindia.indiatimes.com
   - globaltimes.com
 
-# Search backend
+
 search_tool: tavily
+#search_tool: 
+
+
 
 # Maximum incidents to fetch
-max_incidents: 3
+max_incidents: 5
+min_sources: 2

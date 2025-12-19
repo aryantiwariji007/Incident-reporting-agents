@@ -5,3 +5,8 @@ python-dotenv
 pydantic
 langchain_google-genai
 tavily-python
+beautifulsoup4
+feedparser 
+transformers 
+torch 
+pandas

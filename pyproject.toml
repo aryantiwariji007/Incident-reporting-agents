@@ -5,17 +5,22 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "beautifulsoup4>=4.13.5",
     "crewai>=0.186.1",
     "crewai-tools>=0.71.0",
     "ddgs>=9.5.5",
     "duckduckgo-search>=8.1.1",
+    "feedparser>=6.0.12",
     "groq>=0.31.1",
     "langchain-community>=0.3.29",
     "langchain-google-genai>=2.1.11",
     "langchain-groq>=0.3.8",
     "load-dotenv>=0.1.0",
+    "pandas>=2.3.2",
     "pip>=25.2",
     "pydantic>=2.11.9",
     "python-dotenv>=1.1.1",
     "tavily-python>=0.7.12",
+    "torch>=2.8.0",
+    "transformers>=4.46.3",
 ]
